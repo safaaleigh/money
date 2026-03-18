@@ -10,7 +10,9 @@
     "typescript": "^5"
   },
   "scripts": {
-    "start": "bun run index.ts"
+    "start": "bun run index.ts",
+    "loop": "bun run loop.ts",
+    "loop:fast": "bun run loop.ts --interval 60"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.2.77",

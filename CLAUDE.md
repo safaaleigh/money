@@ -15,7 +15,19 @@ bun run index.ts "Buy 10 shares of AAPL"
 
 - `index.ts` — Agent entrypoint (system prompt, agent loop)
 - `tools.ts` — MCP tools: query, buy, sell (Alpaca paper trading)
+- `portfolio.ts` — Mock portfolio tracker (simulated cash, positions, P&L)
+- `loop.ts` — Autonomous trading loop with feedback intervals
 - `CONSTITUTION.md` — Agent guardrails
+- `STRATEGY.md` — Trading strategy rules and feedback thresholds
+
+## Autonomous mock trading
+
+```sh
+bun run loop.ts              # 5-min cycles, mock accounting
+bun run loop.ts --interval 60  # 1-min cycles (faster testing)
+```
+
+State is persisted to `portfolio.json`. Delete it to reset, or the agent can call `reset_portfolio`.
 
 ---
 

@@ -36,7 +36,7 @@ for await (const message of query({
     ],
     maxTurns: 10,
     permissionMode: "bypassPermissions",
-    dangerouslySkipPermissions: true,
+    allowDangerouslySkipPermissions: true,
   },
 })) {
   if (message.type === "assistant" && message.message?.content) {
